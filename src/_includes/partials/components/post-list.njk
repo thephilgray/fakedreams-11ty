@@ -1,7 +1,7 @@
 {% if postListItems.length %}
   <section class="[ post-list ] [ pad-top-700 gap-bottom-900 ]">
     <div class="[ inner-wrapper ] [ sf-flow ]">
-      <h2 class="[ post-list__heading ] [ text-700 md:text-800 ]">{{ postListHeading }}</h2>
+      {# <h2 class="[ post-list__heading ] [ text-700 md:text-800 ]">{{ postListHeading }}</h2> #}
       <ol class="[ post-list__items ] [ sf-flow ] [ pad-top-300 ]" reversed>
         {% for item in postListItems %}
           {% if item.date.getTime() <= global.now %}
@@ -11,6 +11,15 @@
               </h3>
               <p class="text-500 gap-top-300 weight-mid">
                 <time datetime="{{ item.date | w3DateFilter }}">{{ item.date | dateFilter }}</time>
+              </p>
+              <p>
+              <strong>TLDR:</strong>
+              {# if there is a tldr use it as the exerpt, otherwise approximate it with a helper #}
+              {% if item.data.tldr %}
+              {{ item.data.tldr }}
+              {% else %}
+              {{helpers.getExcerpt(item.data.content)}}
+              {% endif %}
               </p>
             </li>
           {% endif %}
