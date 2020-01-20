@@ -1,5 +1,5 @@
 ---
-title: Why I started another blog
+title: Why I made a new blog
 tldr: I want to focus on content and creative output, not designing another site from scratch and worrying about maintaining it and staying on-brand.
 date: '2020-01-19'
 tags:

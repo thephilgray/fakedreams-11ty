@@ -1,6 +1,6 @@
 ---
 layout: home
-title: small somethings from nothing
+title: blog
 postsHeading: Latest posts
 archiveButtonText: See all posts
 socialImage: ''
